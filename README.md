@@ -69,6 +69,14 @@ alias lb=~/projects/linear-board/board
 
 Running `./board` again while it's already open re-attaches to the same board instead of starting a second one.
 
+### Claude and Linear
+
+Every Claude session started by the board gets your key as `$LINEAR_API_KEY`, so Claude can read tickets or move cards through the Linear API with no extra setup. Claude just needs to know it's there. A line like this in your `CLAUDE.md` does it:
+
+> To read or move Linear tickets, call `https://api.linear.app/graphql` with `$LINEAR_API_KEY` as the `Authorization` header (no `Bearer`).
+
+Sessions you start outside the board (your editor, a plain terminal) don't get the variable.
+
 ## How to use it
 
 ### The kanban

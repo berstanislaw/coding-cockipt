@@ -1034,6 +1034,7 @@ func main() {
 		fmt.Fprintln(os.Stderr, "run it through ./board (needs tmux)")
 		os.Exit(1)
 	}
+	tmux("set-environment", "-g", "LINEAR_API_KEY", apiKey)
 	for _, d := range []string{statusDir, runDir} {
 		os.MkdirAll(d, 0o700)
 	}
